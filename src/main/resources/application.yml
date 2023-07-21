@@ -17,3 +17,6 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: ASSIGN_ID
+# 保存文件时的路径（文件下载）
+reggie:
+  path: D:\ReggieImage\

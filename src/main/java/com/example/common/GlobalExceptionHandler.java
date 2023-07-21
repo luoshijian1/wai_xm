@@ -24,7 +24,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
     public R<String> exceptionHandler(SQLIntegrityConstraintViolationException ex){
-        log.error(ex.getMessage());
+//        log.error(ex.getMessage());
 
         if(ex.getMessage().contains("Duplicate entry")){
             String[] split = ex.getMessage().split(" ");
@@ -35,4 +35,15 @@ public class GlobalExceptionHandler {
         return R.error("该账号已存在！");
     }
 
+
+    /**
+     * 异常处理方法
+     * @return
+     */
+    @ExceptionHandler(CustomException.class)
+    public R<String> exceptionHandler(CustomException ex){
+//        log.error(ex.getMessage());
+
+        return R.error(ex.getMessage());
+    }
 }
